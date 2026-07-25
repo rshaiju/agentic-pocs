@@ -11,6 +11,7 @@ dependencies = [
     { name = "langchain" },
     { name = "openai" },
     { name = "python-dotenv" },
+    { name = "requests" },
     { name = "uvicorn", extra = ["standard"] },
 ]
 
@@ -20,6 +21,7 @@ requires-dist = [
     { name = "langchain", specifier = ">=0.0.200" },
     { name = "openai", specifier = ">=0.27.0" },
     { name = "python-dotenv", specifier = ">=1.0.0" },
+    { name = "requests", specifier = ">=2.34.2" },
     { name = "uvicorn", extras = ["standard"], specifier = ">=0.20.0" },
 ]
 

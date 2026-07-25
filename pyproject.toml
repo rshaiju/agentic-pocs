@@ -16,6 +16,7 @@ dependencies = [
 	"openai>=0.27.0",
 	"langchain>=0.0.200",
 	"python-dotenv>=1.0.0",
+	"requests>=2.34.2"
 ]
 
 [tool.setuptools.packages.find]
