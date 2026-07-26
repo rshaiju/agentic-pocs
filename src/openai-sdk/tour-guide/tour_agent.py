@@ -41,8 +41,11 @@ def handle_tool_calls(tool_calls):
     result=[]
     for tool_call in tool_calls:
         tool_name = tool_call.function.name
-        tool_input = tool_call.function.arguments
+        arguments = json.loads(tool_call.function.arguments)
 
+        tool=globals().get(tool_name)
+        tool_output=tool(**arguments) if tool else "Unknown tool"
+        '''
         if tool_name == "get_files":
             tool_output = get_files("data-files")
         elif tool_name == "get_file_content":
@@ -50,7 +53,7 @@ def handle_tool_calls(tool_calls):
             tool_output = get_file_content(args.get("file_path", ""))
         else:
             tool_output = "Unknown tool"
-
+        '''
         result.append({"role": "tool", "content": json.dumps(tool_output), "tool_call_id": tool_call.id})
     return result
 
