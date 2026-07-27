@@ -12,7 +12,8 @@ response = llm.chat.completions.create(
     model="gpt-4o-mini",
     messages=[
         {"role": "system", "content": system_msg},
-        {"role": "user", "content": user_msg}
-    ])
+        {"role": "user", "content": user_msg},
+    ],
+)
 
 print(response.choices[0].message.content)

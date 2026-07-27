@@ -1,9 +1,11 @@
-from questioner import Questioner
 from answerer import Answerer
 from evaluator import Evaluator
+from questioner import Questioner
 
 questioner = Questioner()
-question = questioner.ask_question("Please provide a challenging GK question to test the IQ of a human.")
+question = questioner.ask_question(
+    "Please provide a challenging GK question to test the IQ of a human."
+)
 print("Question:", question)
 
 answerer = Answerer()

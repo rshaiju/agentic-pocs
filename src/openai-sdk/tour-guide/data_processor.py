@@ -1,4 +1,3 @@
-
 import os
 
 GET_FILES_TOOLS_JSON = {
@@ -7,14 +6,12 @@ GET_FILES_TOOLS_JSON = {
     "parameters": {
         "type": "object",
         "properties": {
-            "path": {
-                "type": "string",
-                "description": "The path to the directory."
-            }
+            "path": {"type": "string", "description": "The path to the directory."}
         },
-        "required": ["path"]
-    }
+        "required": ["path"],
+    },
 }
+
 
 def get_files(path):
     """
@@ -26,10 +23,15 @@ def get_files(path):
     Returns:
         list: A list of file paths in the directory.
     """
-    script_dir= os.path.dirname(os.path.abspath(__file__))
+    script_dir = os.path.dirname(os.path.abspath(__file__))
     fully_qualified_path = script_dir + "/" + path
 
-    return [os.path.join(fully_qualified_path, f) for f in os.listdir(fully_qualified_path) if os.path.isfile(os.path.join(fully_qualified_path, f))]  
+    return [
+        os.path.join(fully_qualified_path, f)
+        for f in os.listdir(fully_qualified_path)
+        if os.path.isfile(os.path.join(fully_qualified_path, f))
+    ]
+
 
 GET_FILE_CONTENT_TOOLS_JSON = {
     "name": "get_file_content",
@@ -37,14 +39,12 @@ GET_FILE_CONTENT_TOOLS_JSON = {
     "parameters": {
         "type": "object",
         "properties": {
-            "file_path": {
-                "type": "string",
-                "description": "The path to the file."
-            }
+            "file_path": {"type": "string", "description": "The path to the file."}
         },
-        "required": ["file_path"]
-    }
+        "required": ["file_path"],
+    },
 }
+
 
 def get_file_content(file_path):
     """
@@ -56,5 +56,5 @@ def get_file_content(file_path):
     Returns:
         str: The content of the file.
     """
-    with open(file_path, 'r', encoding='utf-8') as file:
-        return file.read()  
+    with open(file_path, "r", encoding="utf-8") as file:
+        return file.read()
