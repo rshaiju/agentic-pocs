@@ -22,6 +22,7 @@ dependencies = [
 	"black>=26.5.1",
 	"isort>=8.0.1",
 	"langgraph>=1.2.9",
+	"langchain-community>=0.4.2",
 ]
 
 [tool.setuptools.packages.find]
