@@ -86,3 +86,5 @@ ipython_config.py
 
 # Wheels
 *.whl
+
+memory.db
